@@ -1,0 +1,27 @@
+#include<stdio.h>
+int binary(int a[], int start, int end, int num)
+{
+while(start<=end)
+{
+int mid = start+(end-start)/2;
+if (a[mid]==num)
+ return mid;
+ if(a[mid] < num)
+  start=mid+1;
+  else
+  end=mid-1;
+  }
+  return -1;
+  }
+int main(void)
+{
+int a[] = {12,13,21,36,40,55,60,75,80,90};
+int n=10;
+int num=60;
+int found = binary(a,0,n-1,num)
+if(found == -1)
+ printf("Element not found in the array");
+else
+ printf("Element found at the index: %d",found);
+ return 0;
+ }
